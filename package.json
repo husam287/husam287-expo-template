@@ -16,14 +16,18 @@
     "@reduxjs/toolkit": "^1.8.4",
     "axios": "^0.27.2",
     "expo": "~46.0.6",
+    "expo-localization": "~13.1.0",
     "expo-status-bar": "~1.4.0",
     "expo-updates": "^0.14.4",
+    "formik": "^2.2.9",
+    "i18n-js": "^4.1.0",
     "react": "18.0.0",
     "react-native": "0.69.4",
     "react-native-safe-area-context": "4.3.1",
     "react-native-screens": "~3.15.0",
     "react-native-status-bar-height": "^2.6.0",
-    "react-redux": "^8.0.2"
+    "react-redux": "^8.0.2",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

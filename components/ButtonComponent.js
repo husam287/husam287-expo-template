@@ -1,6 +1,5 @@
 import React from 'react'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
-import { CircleSnail } from 'react-native-progress'
+import { ActivityIndicator, StyleSheet, TouchableOpacity, View } from 'react-native'
 import Colors from '../constants/Colors'
 import { globalStyle } from '../constants/Styles'
 import CustomText from './CustomText'
@@ -37,7 +36,7 @@ const ButtonComponent = ({
                         {hasArrow && <Icon name="right-arrow" size={30} color="#fff" style={styles.nextArrowPlace} />}
                     </>
                     :
-                    <CircleSnail color={['#fff']} size={55} spinDuration={1000} duration={500} />
+                    <ActivityIndicator color={'#fff'} size={55} />
                 }
             </TouchableOpacity>
         </View>

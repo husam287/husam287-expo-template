@@ -18,13 +18,20 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
+    },
+    "locales": {
+      "en": "./assets/i18n/en.json",
+      "ar": "./assets/i18n/ar.json"
     },
     "web": {
       "favicon": "./assets/favicon.png"

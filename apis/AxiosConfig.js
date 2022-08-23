@@ -1,8 +1,6 @@
 import axios from "axios";
 import DomainUrl from "./Domain";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import HandleErrors from "../hooks/handleErrors";
-import i18n from "../assets/i18n";
 import { store } from "../redux";
 import { hideLoader, showLoader } from "../redux/appReducer";
 
