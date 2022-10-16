@@ -22,17 +22,6 @@ expo init --template @husam287/expo-template
 ```bash
 expo init [name] --template @husam287/expo-template
 ```
-
-### 💻  **Development Practices**
-1. **Responsive:** Make sure to utilize responsive sizing for components and using responsive color values (defined in theme.ts) where necessary.
-2. **Lightweight Files:** Keep files under ~500 lines of code. If you much longer than this you should probably be creating a different component to import in.
-3. **Compilation and Formatting:** Strongly type when possible to cut down on runtime errors while also linting code often to maintain strong formatting.
-4. **Naming Conventions:**   
-    *Files/Directories:* all lower case with - for spaces (ex. form-input.tsx)   
-    *Components/Interfaces:* Capital first letter and CamelCase (ex. \<FormInput />)  
-    *Variables:* camelCase (ex. const isLoading)
-
-
 ## 📂 Organization 
 `src/components`: useful re-usable component library.  
 `src/constants`: app constants, such as theme, that remain consistent throughout the app.   
