@@ -1,4 +1,5 @@
 # husam287-expo-template
+EXPO SDK 46 Template
 
 > To use this template, make sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) installed and run:
 
