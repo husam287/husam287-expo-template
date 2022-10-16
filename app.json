@@ -19,11 +19,13 @@
     ],
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.bit68.hossam",
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true
       }
     },
     "android": {
+      "package": "com.bit68.hossam",
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
