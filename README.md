@@ -13,8 +13,8 @@ expo init --template @husam287/expo-template
 * [**Redux Toolkit**](): We use redux toolkit to manage universal state. An introduction into redux toolkit can be found [here](https://www.youtube.com/watch?v=9zySeP5vH9c).
 * [**Axios hooks**](): To use axios as react hook with the aim of [axios hook package](https://www.npmjs.com/package/axios-hooks)
 * [**Icomoon**](): To use custom icons using icon component and files generated from [Icomoon website](https://icomoon.io/)
-* **Absolute Imports:** To avoid annoying relative.importsmaking-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1).
-* **Form Validation:** We are using [react-hook-form](https://react-hook-form.com/) and [yup](https://www.npmjs.com/package/yup) to validate our user inputs, checking them in our form-input component while passing the yup schema in the screens. [This tutorial](https://dev.to/franciscomendes10866/react-form-validation-with-react-hook-form-and-yup-4a98) is useful to reference. 
+* **Absolute Imports:** To avoid annoying relative.
+* **Form Validation:** We are using [react-hook-form](https://react-hook-form.com/) and [yup](https://www.npmjs.com/package/yup) to validate our user inputs, checking them in our form-input component while passing the yup schema in the screens 
 
 ## 🔧 Usage
 > Be sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) installed.
