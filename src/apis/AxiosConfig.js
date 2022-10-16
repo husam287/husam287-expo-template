@@ -6,7 +6,7 @@ import { store } from "reducers";
 import { hideLoader, showLoader } from "reducers/appReducer";
 
 const _axios = axios.create({
-    baseURL: `${DomainUrl}/api`,
+    baseURL: `${DomainUrl}/en/api`,
     headers: {}
 })
 

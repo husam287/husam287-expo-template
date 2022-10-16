@@ -1,2 +1,2 @@
-const DomainUrl = 'https://10stations.com'; //live server
+const DomainUrl = 'https://api-zak.bit68.com'; //live server
 export default DomainUrl;
