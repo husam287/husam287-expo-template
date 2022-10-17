@@ -1,26 +1,25 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
+import { Ionicons } from '@expo/vector-icons';
 
 import CustomText from 'components/CustomText'
-import Colors from 'constants/Colors'
 import { globalStyle } from 'constants/Styles'
-
-const Arrow = () => {
-    return require("assets/images/back-arrow.png")
-}
+import { COLORS } from 'constants/Colors'
 
 const HeaderComponent = ({ navigation, title, hasBackArrow }) => {
     return (
         <View style={styles.headerStyle}>
-            {hasBackArrow &&
-                <TouchableOpacity style={{ padding: 5, marginBottom: 20 }} onPress={() => navigation.goBack()}>
-                    <Image style={{ height: 20, width: 10 }} source={Arrow()} />
+            {hasBackArrow && navigation?.canGoBack() &&
+                <TouchableOpacity style={{ padding: 5 }} onPress={() => navigation.goBack()}>
+                    <Ionicons name="ios-chevron-back" size={24} color={COLORS.primary} />
                 </TouchableOpacity>
             }
 
             <View>
-                <CustomText style={{ ...globalStyle.font500, color: Colors.primary, fontSize: 26 }}>{title}</CustomText>
+                <CustomText style={styles.headerTitle}>
+                    {title}
+                </CustomText>
             </View>
         </View>
     )
@@ -34,7 +33,11 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
         paddingHorizontal: 15,
         paddingTop: getStatusBarHeight(),
-        justifyContent: 'space-between',
         backgroundColor: '#fff'
+    },
+    headerTitle: {
+        color: COLORS.primary,
+        fontSize: 22,
+        ...globalStyle.font500,
     }
 })

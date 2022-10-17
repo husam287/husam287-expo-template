@@ -6,7 +6,8 @@ import { I18n } from 'i18n-js';
 const translations = {
     en: english,
     ar: arabic
-};
+}
+
 const i18n = new I18n(translations);
 
 i18n.locale = Localization.locale;
