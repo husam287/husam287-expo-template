@@ -1,17 +1,45 @@
-import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Metrics from "constants/Metrics";
-import HomeScreen from "screens/HomeScreen";
-import CoursesScreen from "screens/CoursesScreen";
-import ProfileScreen from "screens/ProfileScreen";
-import RouterOption from "../HeaderOptions/RouterOption";
-import TapbarComponent from "../HeaderOptions/TapbarComponent";
+import Metrics from 'constants/Metrics';
+import HomeScreen from 'screens/HomeScreen';
+import CoursesScreen from 'screens/CoursesScreen';
+import ProfileScreen from 'screens/ProfileScreen';
+import RouterOption from '../HeaderOptions/RouterOption';
+import TapbarComponent from '../HeaderOptions/TapbarComponent';
+
+const TABWIDTH = Metrics.screenWidth / 3;
+
+const HomeTabBarElement = ({ focused }) => (
+  <TapbarComponent
+    title={'Home'}
+    iconName={'home'}
+    isFocused={focused}
+    tabWidth={TABWIDTH}
+  />
+);
+
+const ProfileTabBarElement = ({ focused }) => (
+  <TapbarComponent
+    title={'Profile'}
+    iconName={'user'}
+    isFocused={focused}
+    tabWidth={TABWIDTH}
+  />
+);
+
+const CoursesTabBarElement = ({ focused }) => (
+  <TapbarComponent
+    title={'Courses'}
+    iconName={'heart_outline'}
+    isFocused={focused}
+    tabWidth={TABWIDTH}
+  />
+);
 
 const BottomTab = createBottomTabNavigator();
-export default function BottomNavigator() {
-  const TABWIDTH = Metrics.screenWidth / 3
 
+export default function BottomNavigator() {
   return (
     <BottomTab.Navigator
       screenOptions={() => ({
@@ -19,23 +47,17 @@ export default function BottomNavigator() {
         tabBarStyle: {
           height: Metrics.bottomTabsHeight,
           elevation: 0,
-        }
+        },
       })}
     >
       {/* Home  */}
       <BottomTab.Screen
         name="Home"
-        options={
-          ({ navigation }) => RouterOption({
+        options={({ navigation }) =>
+          RouterOption({
             navigation,
             title: 'Home',
-            tabBarIcon: ({ focused }) =>
-              <TapbarComponent
-                title="Home"
-                iconName="home"
-                isFocused={focused}
-                tabWidth={TABWIDTH}
-              />
+            tabBarIcon: HomeTabBarElement,
           })
         }
         component={HomeScreen}
@@ -44,17 +66,11 @@ export default function BottomNavigator() {
       {/* Profile  */}
       <BottomTab.Screen
         name="Profile"
-        options={
-          ({ navigation, route }) => RouterOption({
+        options={({ navigation, route }) =>
+          RouterOption({
             navigation,
             title: 'Profile',
-            tabBarIcon: ({ focused }) =>
-              <TapbarComponent
-                title="Profile"
-                iconName="heart_outline"
-                isFocused={focused}
-                tabWidth={TABWIDTH}
-              />
+            tabBarIcon: ProfileTabBarElement,
           })
         }
         component={ProfileScreen}
@@ -63,17 +79,11 @@ export default function BottomNavigator() {
       {/* Courses */}
       <BottomTab.Screen
         name="Courses"
-        options={
-          ({ navigation }) => RouterOption({
+        options={({ navigation }) =>
+          RouterOption({
             navigation,
             title: 'Courses',
-            tabBarIcon: ({ focused }) =>
-              <TapbarComponent
-                title="Courses"
-                iconName="heart_outline"
-                isFocused={focused}
-                tabWidth={TABWIDTH}
-              />
+            tabBarIcon: CoursesTabBarElement,
           })
         }
         component={CoursesScreen}
@@ -81,4 +91,3 @@ export default function BottomNavigator() {
     </BottomTab.Navigator>
   );
 }
-

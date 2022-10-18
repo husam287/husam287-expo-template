@@ -7,6 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "lint": "eslint --fix --ext .js,.jsx ./src",
     "deploy-test": "expo publish --release-channel testingv1",
     "deploy-live": "expo publish --release-channel prodv1"
   },
@@ -34,6 +35,9 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@react-native-community/eslint-config": "^3.1.0",
+    "eslint": "^8.25.0",
+    "prettier": "^2.7.1"
   }
 }

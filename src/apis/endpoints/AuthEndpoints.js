@@ -1,4 +1,4 @@
-export class AuthEndpoints {
+export class AuthEndpoint {
   /**
    *
    * @param {Object} data
@@ -9,9 +9,9 @@ export class AuthEndpoints {
    */
   static login(data) {
     return {
-      url: "/login/",
-      method: "post",
+      url: '/products/',
+      method: 'get',
       data: data,
-    }
+    };
   }
 }

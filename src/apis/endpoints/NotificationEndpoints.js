@@ -1,4 +1,1 @@
-export class NotificationEndpoint {
-    
-
-}
+export class NotificationEndpoint {}

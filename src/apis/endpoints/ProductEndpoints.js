@@ -1,6 +1,5 @@
 export class ProductEndpoints {
   /**
-   * 
    * @param {Object} data
    * @param {string} data.brand brand slugs separated by commas
    * @param {string} data.color
@@ -16,16 +15,16 @@ export class ProductEndpoints {
    */
   static getProducts(data) {
     return {
-      url: "/products/",
-      method: "get",
+      url: '/products/',
+      method: 'get',
       data: data,
-    }
+    };
   }
 
   static getCategories() {
     return {
-      url: "/categories/",
-      method: "get"
-    }
+      url: '/categories/',
+      method: 'get',
+    };
   }
 }

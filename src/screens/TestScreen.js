@@ -1,14 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { Text, View } from 'react-native';
+import React from 'react';
 
 const TestScreen = () => {
-    return (
-        <View>
-            <Text>hi</Text>
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>hi</Text>
+    </View>
+  );
+};
 
-export default TestScreen
-
-const styles = StyleSheet.create({})
+export default TestScreen;

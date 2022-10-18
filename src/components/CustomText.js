@@ -1,23 +1,22 @@
 import { globalStyle } from 'constants/Styles';
-import React from 'react'
-import { I18nManager, Text } from 'react-native'
+import React from 'react';
+import { I18nManager, StyleSheet, Text } from 'react-native';
 
-const CustomText = (props) => {
-    const styles = props.style?.lenght ? [...props.style] : props.style;
-    return (
-        <Text
-            {...props}
-            style={[{
-                writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
-                ...globalStyle.font400,
-                color: '#fff'
-            },
-                styles
-            ]}
-        >
-            {props.children}
-        </Text>
-    )
-}
+const CustomText = ({ style, children, ...props }) => {
+  const customStyles = style?.lenght ? [...style] : style;
+  return (
+    <Text {...props} style={[styles.textStyle, customStyles]}>
+      {children}
+    </Text>
+  );
+};
 
-export default CustomText
+export default CustomText;
+
+const styles = StyleSheet.create({
+  textStyle: {
+    writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
+    color: '#fff',
+    ...globalStyle.font400,
+  },
+});

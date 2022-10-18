@@ -1,14 +1,14 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react';
+import { Text, View } from 'react-native';
 
 const ProfileScreen = () => {
+  const ss = 'Profile Screen';
+
   return (
     <View>
-      <Text>ProfileScreen</Text>
+      <Text>{ss}</Text>
     </View>
-  )
-}
+  );
+};
 
-export default ProfileScreen
-
-const styles = StyleSheet.create({})
+export default ProfileScreen;
