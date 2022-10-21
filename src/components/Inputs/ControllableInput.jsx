@@ -1,9 +1,9 @@
 import React from 'react';
-import { COLORS } from 'constants/Colors';
+import COLORS from 'constants/Colors';
 import { Controller } from 'react-hook-form';
 import PureInput from './PureInput';
 
-const ControllableInput = ({
+export default function ControllableInput({
   control,
   name,
   editable = true,
@@ -19,7 +19,7 @@ const ControllableInput = ({
   textArea,
   customInputStyle,
   hintText,
-}) => {
+}) {
   return (
     <Controller
       control={control}
@@ -47,6 +47,4 @@ const ControllableInput = ({
       )}
     />
   );
-};
-
-export default ControllableInput;
+}

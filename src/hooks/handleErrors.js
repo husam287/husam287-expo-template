@@ -1,4 +1,4 @@
-import { store } from 'reducers';
+import store from 'reducers';
 import { setDangerToast } from 'reducers/appReducer';
 
 export default function HandleErrors(err) {
@@ -6,7 +6,7 @@ export default function HandleErrors(err) {
     store.dispatch(
       setDangerToast({
         message: msg,
-      })
+      }),
     );
   };
 

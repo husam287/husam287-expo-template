@@ -3,7 +3,7 @@ import HeaderComponent from './HeaderComponent';
 
 export default function RouterOption({ navigation, title, tabBarIcon }) {
   return {
-    title: title,
+    title,
     header: () => (
       <HeaderComponent
         title={title}
@@ -11,7 +11,7 @@ export default function RouterOption({ navigation, title, tabBarIcon }) {
         hasBackArrow={navigation?.canGoBack && !tabBarIcon}
       />
     ),
-    tabBarIcon: tabBarIcon,
+    tabBarIcon,
     headerShown: Boolean(title),
   };
 }

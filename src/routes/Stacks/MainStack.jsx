@@ -12,17 +12,15 @@ export default function MainStack() {
       {/* MAIN SCREENS */}
       <Stack.Group>
         <Stack.Screen
-          name={'HomeStack'}
+          name="HomeStack"
           component={BottomNavigator}
           options={({ navigation }) => RouterOption({ navigation })}
         />
 
         <Stack.Screen
-          name={'testScreen'}
+          name="testScreen"
           component={TestScreen}
-          options={({ navigation }) =>
-            RouterOption({ navigation, title: 'Test screen' })
-          }
+          options={({ navigation }) => RouterOption({ navigation, title: 'Test screen' })}
         />
       </Stack.Group>
 

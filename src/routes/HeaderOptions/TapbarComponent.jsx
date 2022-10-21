@@ -1,12 +1,14 @@
 import { View } from 'react-native';
 import React from 'react';
 
-import { globalStyle } from 'constants/Styles';
+import globalStyle from 'constants/Styles';
 import CustomText from 'components/CustomText';
-import { Icon } from 'components/Icon';
-import { COLORS } from 'constants/Colors';
+import Icon from 'components/Icon';
+import COLORS from 'constants/Colors';
 
-const TapbarComponent = ({ isFocused, title, tabWidth, iconName }) => {
+function TapbarComponent({
+  isFocused, title, tabWidth, iconName,
+}) {
   const containerStyle = {
     alignItems: 'center',
     justifyContent: 'center',
@@ -29,6 +31,6 @@ const TapbarComponent = ({ isFocused, title, tabWidth, iconName }) => {
       <CustomText style={[textStyle, globalStyle.font500]}>{title}</CustomText>
     </View>
   );
-};
+}
 
 export default TapbarComponent;

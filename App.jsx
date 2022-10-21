@@ -1,8 +1,9 @@
 import React from 'react';
-import useCachedResources from 'hooks/useCachedResurces';
 import { Provider } from 'react-redux';
+
+import useCachedResources from 'hooks/useCachedResurces';
 import Route from 'routes';
-import { store } from 'reducers';
+import store from 'reducers';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();

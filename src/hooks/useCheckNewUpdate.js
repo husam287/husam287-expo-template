@@ -2,7 +2,7 @@ import * as Updates from 'expo-updates';
 import { useEffect } from 'react';
 import { Alert } from 'react-native';
 
-export const useCheckNewUpdates = () => {
+export default function useCheckNewUpdates() {
   useEffect(() => {
     (async () => {
       try {
@@ -17,12 +17,12 @@ export const useCheckNewUpdates = () => {
                 text: 'Restart App',
                 onPress: () => Updates.reloadAsync(),
               },
-            ]
+            ],
           );
         }
       } catch (e) {
-        console.log(e);
+        // error message
       }
     })();
   }, []);
-};
+}

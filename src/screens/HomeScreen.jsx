@@ -9,13 +9,21 @@ import i18n from 'assets/i18n';
 import ScreenWrapper from 'components/ScreenWrapper';
 import ButtonComponent from 'components/ButtonComponent';
 import CustomText from 'components/CustomText';
-import Container from 'components/Container';
 import ControllableInput from 'components/Inputs/ControllableInput';
-
+import COLORS from 'constants/Colors';
 // import { useFetch } from 'hooks/useFetch'
 // import { ProductEndpoints } from 'apis/endpoints/ProductEndpoints'
 
-const HomeScreen = () => {
+const styles = StyleSheet.create({
+  redBackground: {
+    backgroundColor: COLORS.secondary,
+  },
+  spaceTop10: {
+    marginTop: 10,
+  },
+});
+
+export default function HomeScreen() {
   const navigation = useNavigation();
   // const [{ loading, response }] = useFetch(ProductEndpoints.getCategories())
   const schema = YUP.object().shape({
@@ -33,34 +41,21 @@ const HomeScreen = () => {
 
   return (
     <ScreenWrapper>
-      <Container>
-        <View style={styles.redBackground}>
-          <CustomText>{i18n.t('CFBundleDisplayName')}</CustomText>
-        </View>
+      <View style={styles.redBackground}>
+        <CustomText>{i18n.t('CFBundleDisplayName')}</CustomText>
+      </View>
 
-        <ControllableInput
-          name={'test'}
-          control={control}
-          placeholderText={'test'}
-        />
+      <ControllableInput
+        name="test"
+        control={control}
+        placeholderText="test"
+      />
 
-        <ButtonComponent
-          buttonCustomStyle={styles.spaceTop10}
-          title={'Submit'}
-          onPress={handleSubmit(onSubmit)}
-        />
-      </Container>
+      <ButtonComponent
+        buttonCustomStyle={styles.spaceTop10}
+        title="Submit"
+        onPress={handleSubmit(onSubmit)}
+      />
     </ScreenWrapper>
   );
-};
-
-export default HomeScreen;
-
-const styles = StyleSheet.create({
-  redBackground: {
-    backgroundColor: 'red',
-  },
-  spaceTop10: {
-    marginTop: 10,
-  },
-});
+}

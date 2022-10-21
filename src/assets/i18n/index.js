@@ -1,7 +1,7 @@
 import * as Localization from 'expo-localization';
+import { I18n } from 'i18n-js';
 import english from './en.json';
 import arabic from './ar.json';
-import { I18n } from 'i18n-js';
 
 const translations = {
   en: english,

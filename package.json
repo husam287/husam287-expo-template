@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "eslint --fix --ext .js,.jsx ./src",
+    "lint": "eslint --fix --ext .js,.jsx ./src/",
     "deploy-test": "expo publish --release-channel testingv1",
     "deploy-live": "expo publish --release-channel prodv1"
   },
@@ -22,6 +22,7 @@
     "axios-hooks": "^4.0.0",
     "expo": "~46.0.6",
     "expo-localization": "~13.1.0",
+    "expo-notifications": "~0.16.1",
     "expo-status-bar": "~1.4.0",
     "expo-updates": "~0.14.6",
     "i18n-js": "^4.1.0",
@@ -32,12 +33,17 @@
     "react-native-screens": "~3.15.0",
     "react-native-status-bar-height": "^2.6.0",
     "react-redux": "^8.0.2",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "expo-device": "~4.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "@react-native-community/eslint-config": "^3.1.0",
     "eslint": "^8.25.0",
-    "prettier": "^2.7.1"
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-native": "^4.0.0"
   }
 }

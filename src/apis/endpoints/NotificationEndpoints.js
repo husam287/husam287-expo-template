@@ -1,1 +1,1 @@
-export class NotificationEndpoint {}
+export default class NotificationEndpoint {}

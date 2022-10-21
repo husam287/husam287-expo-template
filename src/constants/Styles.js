@@ -1,4 +1,4 @@
-export const globalStyle = {
+const globalStyle = {
   /* FONTS */
   font700: {
     fontFamily: 'font700',
@@ -12,6 +12,7 @@ export const globalStyle = {
   font400: {
     fontFamily: 'font400',
   },
+
   fullSize: {
     flex: 1,
   },
@@ -20,3 +21,5 @@ export const globalStyle = {
     alignItems: 'center',
   },
 };
+
+export default globalStyle;

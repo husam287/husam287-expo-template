@@ -1,35 +1,39 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import DomainUrl from './Domain';
-import { store } from 'reducers';
+import store from 'reducers';
 import { hideLoader, showLoader } from 'reducers/appReducer';
+import DomainUrl from './Domain';
 
-const _axios = axios.create({
+const axiosInstance = axios.create({
   baseURL: `${DomainUrl}/en/api`,
   headers: {},
 });
 
-_axios.interceptors.request.use(
+axiosInstance.interceptors.request.use(
   async (config) => {
     store.dispatch(showLoader());
 
     /** Adjust request */
     const token = await AsyncStorage.getItem('token');
 
-    config.headers = {
-      ...config.headers,
-      Authorization: token ? `Bearer ${token}` : undefined,
+    const newConfig = {
+      ...config,
+      headers: {
+        ...config.headers,
+        Authorization: token ? `Bearer ${token}` : undefined,
+      },
     };
-    return config;
+
+    return newConfig;
   },
   (err) => {
     store.dispatch(hideLoader());
     return Promise.reject(err?.response?.data);
-  }
+  },
 );
 
-_axios.interceptors.response.use(
+axiosInstance.interceptors.response.use(
   (response) => {
     store.dispatch(hideLoader());
     return response.data;
@@ -37,15 +41,12 @@ _axios.interceptors.response.use(
   (err) => {
     store.dispatch(hideLoader());
 
-    //backend server error
-    if (err?.response?.data) {
-      return Promise.reject(err?.response?.data);
-    }
-    //For cancellation
-    if (err?.message) {
-      return Promise.reject(err);
-    }
-  }
+    // For cancellation
+    if (err?.message) return Promise.reject(err);
+
+    // backend server error
+    return Promise.reject(err?.response?.data);
+  },
 );
 
-export default _axios;
+export default axiosInstance;

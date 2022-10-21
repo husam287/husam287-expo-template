@@ -1,4 +1,4 @@
-export const COLORS = {
+const COLORS = {
   // Main Colors
   primary: '#74AFD4',
   secondary: '#1A237E',
@@ -9,6 +9,7 @@ export const COLORS = {
   walletBackground: 'rgba(192, 218, 255, 0.15)',
   errorRedColor: 'rgba(255, 0, 0, 1)',
   dark: '#343a40',
+  light: '#fff',
 
   // system message colors
   successTextColor: '#38c976',
@@ -16,3 +17,5 @@ export const COLORS = {
   dangerTextColor: '#ff5050',
   dangerBgColor: '#FFDBDB',
 };
+
+export default COLORS;

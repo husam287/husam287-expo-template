@@ -1,4 +1,4 @@
-export class ProductEndpoints {
+export default class ProductEndpoints {
   /**
    * @param {Object} data
    * @param {string} data.brand brand slugs separated by commas
@@ -17,7 +17,7 @@ export class ProductEndpoints {
     return {
       url: '/products/',
       method: 'get',
-      data: data,
+      data,
     };
   }
 

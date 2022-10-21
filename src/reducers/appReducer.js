@@ -9,21 +9,27 @@ export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    showLoader: (state) => {
-      state.isLoading = true;
-    },
-    hideLoader: (state) => {
-      state.isLoading = false;
-    },
-    setSuccessToast: (state, action) => {
-      state.toast = { type: 'success', message: action.payload };
-    },
-    setDangerToast: (state, action) => {
-      state.toast = { type: 'danger', message: action.payload };
-    },
-    hideToast: (state) => {
-      state.toast = null;
-    },
+    showLoader: (state) => ({
+      ...state,
+      isLoading: true,
+    }),
+    hideLoader: (state) => ({
+      ...state,
+      isLoading: false,
+    }),
+    setSuccessToast: (state, action) => ({
+      ...state,
+      toast: { type: 'success', message: action.payload },
+    }),
+    setDangerToast: (state, action) => ({
+      ...state,
+      toast: { type: 'danger', message: action.payload },
+    }),
+    hideToast: (state) => ({
+      ...state,
+      toast: null,
+
+    }),
   },
 });
 

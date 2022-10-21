@@ -1,4 +1,4 @@
-export class AuthEndpoint {
+export default class AuthEndpoint {
   /**
    *
    * @param {Object} data
@@ -11,7 +11,7 @@ export class AuthEndpoint {
     return {
       url: '/products/',
       method: 'get',
-      data: data,
+      data,
     };
   }
 }

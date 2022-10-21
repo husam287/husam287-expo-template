@@ -6,15 +6,35 @@ import {
   View,
 } from 'react-native';
 
-import { globalStyle } from 'constants/Styles';
+import globalStyle from 'constants/Styles';
+import COLORS from 'constants/Colors';
 import CustomText from './CustomText';
-import { Icon } from './Icon';
-import { COLORS } from 'constants/Colors';
+import Icon from './Icon';
 
-const ButtonComponent = ({
+const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    borderRadius: 10,
+    flexDirection: 'row',
+    height: 50,
+    justifyContent: 'center',
+  },
+  nextArrowPlace: {
+    end: 20,
+    position: 'absolute',
+    ...globalStyle.flipBasesOnLang,
+  },
+  text: {
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    ...globalStyle.font500,
+  },
+});
+
+export default function ButtonComponent({
   title,
   onPress,
-  color = '#fff',
+  color = COLORS.light,
   backgroundColor = COLORS.primary,
   borderColor,
   disabled = false,
@@ -23,11 +43,11 @@ const ButtonComponent = ({
   buttonCustomStyle,
   IconCompoent,
   isLoading,
-}) => {
+}) {
   const customStyle = {
     backgroundColor: disabled ? COLORS.grey : backgroundColor,
-    color: color,
-    borderColor: borderColor,
+    color,
+    borderColor,
     borderWidth: borderColor && 1,
     ...buttonCustomStyle,
   };
@@ -43,7 +63,7 @@ const ButtonComponent = ({
         {!isLoading ? (
           <>
             {IconCompoent && <IconCompoent />}
-            <CustomText style={[styles.text, { color: color, fontSize }]}>
+            <CustomText style={[styles.text, { color, fontSize }]}>
               {title}
             </CustomText>
             {hasArrow && (
@@ -56,31 +76,9 @@ const ButtonComponent = ({
             )}
           </>
         ) : (
-          <ActivityIndicator color={'#fff'} size={24} />
+          <ActivityIndicator color="#fff" size={24} />
         )}
       </TouchableOpacity>
     </View>
   );
-};
-
-export default ButtonComponent;
-
-const styles = StyleSheet.create({
-  button: {
-    borderRadius: 10,
-    height: 50,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    ...globalStyle.font500,
-  },
-  nextArrowPlace: {
-    position: 'absolute',
-    end: 20,
-    ...globalStyle.flipBasesOnLang,
-  },
-});
+}

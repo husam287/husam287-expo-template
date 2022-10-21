@@ -1,4 +1,4 @@
-export const NotificationTypes = {
+const NotificationTypes = {
   AddNewBooking: 1,
   ApproveBooking: 2,
   RejectBooking: 3,
@@ -7,3 +7,5 @@ export const NotificationTypes = {
   newOffer: 13,
   walletAdded: 15,
 };
+
+export default NotificationTypes;
