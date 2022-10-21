@@ -11,6 +11,17 @@
     "deploy-test": "expo publish --release-channel testingv1",
     "deploy-live": "expo publish --release-channel prodv1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "npm run lint",
+      "git add ."
+    ]
+  },
   "dependencies": {
     "@hookform/resolvers": "^2.9.9",
     "@react-native-async-storage/async-storage": "^1.17.9",
@@ -44,6 +55,8 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-native": "^4.0.0"
+    "eslint-plugin-react-native": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3"
   }
 }
