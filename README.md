@@ -17,7 +17,9 @@ expo init [name] --template @husam287/expo-template
 -   [**Form Validation:**](https://react-hook-form.com/) We are using [react-hook-form](https://react-hook-form.com/) and [yup](https://www.npmjs.com/package/yup) to validate our user inputs, checking them in our form-input component while passing the yup schema in the screens
 -   [**Translations:**](https://www.npmjs.com/package/i18n-js) We are using [i18n-js](https://www.npmjs.com/package/i18n-js) and [expo-localization](https://docs.expo.dev/versions/latest/sdk/localization/) to translate the app (en - ar).
 -   [**EAS and live update configuration:**](https://docs.expo.dev/build/introduction/) EAS and expo publish configurations are ready to use (production and testing channels).
--   [**React native community eslintrc config:**](https://github.com/facebook/react-native/tree/HEAD/packages/eslint-config-react-native-community#readme) To keep your code more clean and improve its quality
+-   [**Eslint with airbnb config:**](https://www.npmjs.com/package/eslint-config-airbnb) To keep your code more clean and improve its quality
+-   [**Husky:**](https://github.com/typicode/husky) To make pre-commit hooks
+-   [**Lint-staging:**](https://github.com/okonet/lint-staged#Configuration) Work with husky to prevent commit code without making linting
 -   **Absolute Imports:** To avoid annoying relative.
 
 ## 🔧 Usage
