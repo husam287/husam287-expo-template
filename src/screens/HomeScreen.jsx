@@ -15,7 +15,7 @@ import COLORS from 'constants/Colors';
 // import { ProductEndpoints } from 'apis/endpoints/ProductEndpoints'
 
 const styles = StyleSheet.create({
-  redBackground: {
+  coloredBackground: {
     backgroundColor: COLORS.secondary,
   },
   spaceTop10: {
@@ -41,7 +41,7 @@ export default function HomeScreen() {
 
   return (
     <ScreenWrapper>
-      <View style={styles.redBackground}>
+      <View style={styles.coloredBackground}>
         <CustomText>{i18n.t('CFBundleDisplayName')}</CustomText>
       </View>
 
