@@ -41,9 +41,9 @@ export default function HomeScreen() {
 
   return (
     <ScreenWrapper>
-      <View style={styles.redBackground}>
-        <CustomText>{i18n.t('CFBundleDisplayName')}</CustomText>
-      </View>
+                            <View style={styles.redBackground}>
+                              <CustomText>{i18n.t('CFBundleDisplayName')}</CustomText>
+                            </View        >
 
       <ControllableInput
         name="test"
