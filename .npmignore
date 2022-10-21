@@ -1,9 +1,0 @@
-node_modules
-README.md
-LICENSE
-CHANGELOG
-.git
-.github
-.npmignore
-
-yarn.lock

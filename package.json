@@ -1,7 +1,10 @@
 {
   "name": "@husam287/expo-template",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "node_modules/expo/AppEntry.js",
+  "files": [
+    ".gitignore"
+  ],
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
