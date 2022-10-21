@@ -1,10 +1,9 @@
+node_modules
 README.md
 LICENSE
 CHANGELOG
-
 .git
 .github
-.gitignore
 .npmignore
 
 yarn.lock
