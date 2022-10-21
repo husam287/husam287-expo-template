@@ -1,10 +1,24 @@
 {
   "name": "@husam287/expo-template",
-  "version": "1.0.8",
-  "main": "node_modules/expo/AppEntry.js",
-  "files": [
-    ".gitignore"
+  "author": {
+    "name": "Hossam Sherif",
+    "email": "hossam.sherif.hassan@gmail.com",
+    "url": "https://www.linkedin.com/in/hossamsherif28/"
+  },
+  "description": "This is expo react native start template which has most common packages",
+  "keywords": [
+    "React native",
+    "expo",
+    "sdk46",
+    "redux",
+    "redux-toolkit",
+    "i18n",
+    "absolute path",
+    "start files",
+    "template"
   ],
+  "version": "1.0.9",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
