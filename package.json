@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "eslint --fix --ext .js,.jsx ./src/",
+    "lint": "eslint --fix ./src/**/*.{js,jsx}",
     "deploy-test": "expo publish --release-channel testingv1",
     "deploy-live": "expo publish --release-channel prodv1"
   },
@@ -17,7 +17,7 @@
     }
   },
   "lint-staged": {
-    "*": [
+    "./src/**/*.{js,jsx}": [
       "npm run lint",
       "git add ."
     ]
@@ -56,7 +56,7 @@
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-native": "^4.0.0",
-    "husky": "^8.0.1",
+    "husky": "^4.3.8",
     "lint-staged": "^13.0.3"
   }
 }
