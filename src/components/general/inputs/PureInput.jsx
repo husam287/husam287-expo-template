@@ -9,7 +9,7 @@ import {
   I18nManager,
 } from 'react-native';
 
-import globalStyle from 'constants/Styles';
+import GLOBAL_STYLES from 'constants/GlobalStyles';
 import useShadow from 'hooks/useShadow';
 import COLORS from 'constants/Colors';
 import CustomText from '../CustomText';
@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   errorText: {
-    ...globalStyle.font400,
+    ...GLOBAL_STYLES.font400,
     color: COLORS.errorRedColor,
     fontSize: 12,
   },
   hintText: {
     color: COLORS.secondary,
     fontSize: 14,
-    ...globalStyle.font400,
+    ...GLOBAL_STYLES.font400,
   },
   input: {
     color: COLORS.primary,
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     textAlign: I18nManager.isRTL ? 'right' : 'left',
     textAlignVertical: 'center',
     width: '100%',
-    ...globalStyle.font400,
+    ...GLOBAL_STYLES.font400,
   },
   inputContainer: {
     alignItems: 'center',
@@ -83,7 +83,7 @@ export default function PureInput({
     <View>
       {hasErrors && <CustomText style={styles.errorText}>{error}</CustomText>}
       {hintText && !hasErrors && (
-        <View style={globalStyle.row}>
+        <View style={GLOBAL_STYLES.row}>
           <FontAwesome
             name="exclamation"
             size={14}

@@ -4,9 +4,11 @@ import { getStatusBarHeight } from 'react-native-status-bar-height';
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 
-export default {
+const METRICS = {
   screenWidth: WIDTH,
   screenHeight: HEIGHT,
   bottomTabsHeight: Platform.OS === 'ios' ? 100 : 72,
   headerHeight: getStatusBarHeight() + 30,
 };
+
+export default METRICS;

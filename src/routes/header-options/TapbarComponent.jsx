@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import React from 'react';
 
-import globalStyle from 'constants/Styles';
+import GLOBAL_STYLES from 'constants/GlobalStyles';
 import CustomText from 'components/general/CustomText';
 import Icon from 'components/general/Icon';
 import COLORS from 'constants/Colors';
@@ -28,7 +28,7 @@ function TapbarComponent({
         size={24}
         color={isFocused ? COLORS.primary : COLORS.grey}
       />
-      <CustomText style={[textStyle, globalStyle.font500]}>{title}</CustomText>
+      <CustomText style={[textStyle, GLOBAL_STYLES.font500]}>{title}</CustomText>
     </View>
   );
 }

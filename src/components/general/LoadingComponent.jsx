@@ -4,7 +4,7 @@ import {
 import React from 'react';
 
 import Colors from 'constants/Colors';
-import globalStyle from 'constants/Styles';
+import GLOBAL_STYLES from 'constants/GlobalStyles';
 
 const styles = StyleSheet.create({
   centering: { justifyContent: 'center' },
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 
 export default function LoadingComponent() {
   return (
-    <View style={[globalStyle.row, styles.centering]}>
+    <View style={[GLOBAL_STYLES.row, styles.centering]}>
       <ActivityIndicator size="small" color={Colors.primary} />
     </View>
   );

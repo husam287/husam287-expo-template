@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 import Colors from 'constants/Colors';
-import globalStyle from 'constants/Styles';
+import GLOBAL_STYLES from 'constants/GlobalStyles';
 import CustomText from './CustomText';
 
 const styles = StyleSheet.create({
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 
 export default function EmptyComponent({ text }) {
   return (
-    <View style={[globalStyle.row, styles.centering]}>
+    <View style={[GLOBAL_STYLES.row, styles.centering]}>
       <AntDesign name="inbox" size={18} color={Colors.secondary} />
       <CustomText style={styles.textStyle}>{text}</CustomText>
     </View>

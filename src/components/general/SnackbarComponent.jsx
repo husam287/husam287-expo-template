@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import COLORS from 'constants/Colors';
 import Metrics from 'constants/Metrics';
-import globalStyle from 'constants/Styles';
+import GLOBAL_STYLES from 'constants/GlobalStyles';
 import React, { useCallback, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { hideToast } from 'reducers/appReducer';
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   msgStyle: {
-    ...globalStyle.font500,
+    ...GLOBAL_STYLES.font500,
     alignSelf: 'center',
     color: COLORS.light,
     fontSize: 18,

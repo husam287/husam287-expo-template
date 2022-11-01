@@ -1,4 +1,4 @@
-const globalStyle = {
+const GLOBAL_STYLES = {
   /* FONTS */
   font700: {
     fontFamily: 'font700',
@@ -22,4 +22,4 @@ const globalStyle = {
   },
 };
 
-export default globalStyle;
+export default GLOBAL_STYLES;

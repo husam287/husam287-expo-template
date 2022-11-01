@@ -9,7 +9,7 @@ import {
 
 import COLORS from 'constants/Colors';
 import Metrics from 'constants/Metrics';
-import globalStyle from 'constants/Styles';
+import GLOBAL_STYLES from 'constants/GlobalStyles';
 
 const styles = StyleSheet.create({
   container: {
@@ -47,7 +47,7 @@ export default function ScreenWrapper({
       {Platform.OS === 'ios'
         ? (
           <KeyboardAvoidingView
-            style={globalStyle.fullSize}
+            style={GLOBAL_STYLES.fullSize}
             behavior="padding"
             keyboardVerticalOffset={!noKeyboardVerticalOffset ? Metrics.headerHeight : 0}
           >

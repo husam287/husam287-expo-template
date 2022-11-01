@@ -1,5 +1,5 @@
 import COLORS from 'constants/Colors';
-import globalStyle from 'constants/Styles';
+import GLOBAL_STYLES from 'constants/GlobalStyles';
 import React from 'react';
 import { I18nManager, StyleSheet, Text } from 'react-native';
 
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   textStyle: {
     color: COLORS.light,
     writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
-    ...globalStyle.font400,
+    ...GLOBAL_STYLES.font400,
   },
 });
 

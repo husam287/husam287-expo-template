@@ -39,6 +39,7 @@ expo init [name] --template @husam287/expo-template
    _Directories:_ all lower case with - for spaces (ex. home-components)  
    _Files/Components:_ Capital first letter and CamelCase (ex. \<FormInput />)  
    _Variables:_ camelCase (ex. const isLoading)
+   _Constant value:_ all upper case _ for spaces (ex. GLOBAL_STYLES)
 
 ## 📂 Organization
 
