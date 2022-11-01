@@ -5,8 +5,8 @@ import Metrics from 'constants/Metrics';
 import HomeScreen from 'screens/HomeScreen';
 import CoursesScreen from 'screens/CoursesScreen';
 import ProfileScreen from 'screens/ProfileScreen';
-import RouterOption from '../HeaderOptions/RouterOption';
-import TapbarComponent from '../HeaderOptions/TapbarComponent';
+import RouterOption from '../header-options/RouterOption';
+import TapbarComponent from '../header-options/TapbarComponent';
 
 const TABWIDTH = Metrics.screenWidth / 3;
 

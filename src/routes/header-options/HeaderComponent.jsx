@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { Ionicons } from '@expo/vector-icons';
 
-import CustomText from 'components/CustomText';
+import CustomText from 'components/general/CustomText';
 import globalStyle from 'constants/Styles';
 import COLORS from 'constants/Colors';
 

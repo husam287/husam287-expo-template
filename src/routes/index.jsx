@@ -11,8 +11,8 @@ import { login } from 'reducers/authReducer';
 import i18n from 'assets/i18n';
 import useCheckNewUpdates from 'hooks/useCheckNewUpdate';
 import COLORS from 'constants/Colors';
-import NotificationListnerContainer from 'components/NotificationListnerContainer';
-import MainStack from './Stacks/MainStack';
+import NotificationListnerContainer from 'components/general/NotificationListnerContainer';
+import MainStack from './stacks/MainStack';
 
 function Route() {
   const isSignedIn = useSelector((state) => state.auth.userToken);

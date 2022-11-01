@@ -1,8 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import BottomNavigator from 'routes/TabNavigator/BottomTabNavigator';
+import BottomNavigator from 'routes/tab-navigator/BottomTabNavigator';
 import TestScreen from 'screens/TestScreen';
-import RouterOption from '../HeaderOptions/RouterOption';
+import RouterOption from '../header-options/RouterOption';
 
 const Stack = createNativeStackNavigator();
 

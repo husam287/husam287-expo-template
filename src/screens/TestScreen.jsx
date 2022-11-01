@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native';
 import React from 'react';
-import Icon from 'components/Icon';
+import Icon from 'components/general/Icon';
 import COLORS from 'constants/Colors';
 import globalStyle from 'constants/Styles';
-import ScreenWrapper from 'components/ScreenWrapper';
+import ScreenWrapper from 'components/general/ScreenWrapper';
 
 function TestScreen() {
   return (

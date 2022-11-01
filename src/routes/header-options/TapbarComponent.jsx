@@ -2,8 +2,8 @@ import { View } from 'react-native';
 import React from 'react';
 
 import globalStyle from 'constants/Styles';
-import CustomText from 'components/CustomText';
-import Icon from 'components/Icon';
+import CustomText from 'components/general/CustomText';
+import Icon from 'components/general/Icon';
 import COLORS from 'constants/Colors';
 
 function TapbarComponent({

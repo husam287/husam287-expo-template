@@ -1,23 +1,18 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigation } from '@react-navigation/native';
 import * as YUP from 'yup';
 
-import i18n from 'assets/i18n';
-import ScreenWrapper from 'components/ScreenWrapper';
-import ButtonComponent from 'components/ButtonComponent';
-import CustomText from 'components/CustomText';
-import ControllableInput from 'components/Inputs/ControllableInput';
-import COLORS from 'constants/Colors';
+import ScreenWrapper from 'components/general/ScreenWrapper';
+import ButtonComponent from 'components/general/ButtonComponent';
+import ControllableInput from 'components/general/inputs/ControllableInput';
+import ColoredText from 'components/home-components/ColoredText';
 // import { useFetch } from 'hooks/useFetch'
 // import { ProductEndpoints } from 'apis/endpoints/ProductEndpoints'
 
 const styles = StyleSheet.create({
-  coloredBackground: {
-    backgroundColor: COLORS.secondary,
-  },
   spaceTop10: {
     marginTop: 10,
   },
@@ -41,9 +36,7 @@ export default function HomeScreen() {
 
   return (
     <ScreenWrapper>
-      <View style={styles.coloredBackground}>
-        <CustomText>{i18n.t('CFBundleDisplayName')}</CustomText>
-      </View>
+      <ColoredText />
 
       <ControllableInput
         name="test"
