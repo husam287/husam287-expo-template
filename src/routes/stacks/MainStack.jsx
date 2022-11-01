@@ -1,10 +1,10 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import BottomNavigator from 'routes/tab-navigator/BottomTabNavigator';
 import TestScreen from 'screens/TestScreen';
 import RouterOption from '../header-options/RouterOption';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function MainStack() {
   return (

@@ -44,11 +44,12 @@
     "@react-native-async-storage/async-storage": "^1.17.9",
     "@react-navigation/bottom-tabs": "^6.3.2",
     "@react-navigation/native": "^6.0.11",
-    "@react-navigation/native-stack": "^6.7.0",
+    "@react-navigation/stack": "^6.3.3",
     "@reduxjs/toolkit": "^1.8.4",
     "axios": "^0.27.2",
     "axios-hooks": "^4.0.0",
     "expo": "~46.0.6",
+    "expo-device": "~4.3.0",
     "expo-localization": "~13.1.0",
     "expo-notifications": "~0.16.1",
     "expo-status-bar": "~1.4.0",
@@ -61,8 +62,7 @@
     "react-native-screens": "~3.15.0",
     "react-native-status-bar-height": "^2.6.0",
     "react-redux": "^8.0.2",
-    "yup": "^0.32.11",
-    "expo-device": "~4.3.0"
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
