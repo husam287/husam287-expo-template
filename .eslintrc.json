@@ -22,7 +22,8 @@
     "rules": {
         "react/prop-types": 0,
         "import/no-extraneous-dependencies": 0,
-        "react/jsx-props-no-spreading": 0
+        "react/jsx-props-no-spreading": 0,
+        "react-native/no-raw-text": 0
     },
     "settings": {
         "import/resolver": {
