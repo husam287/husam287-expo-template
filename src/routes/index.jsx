@@ -12,6 +12,7 @@ import i18n from 'assets/i18n';
 import useCheckNewUpdates from 'hooks/useCheckNewUpdate';
 import COLORS from 'constants/Colors';
 import NotificationListnerContainer from 'components/general/NotificationListnerContainer';
+import SnackbarComponent from 'components/general/SnackbarComponent';
 import MainStack from './stacks/MainStack';
 
 function Route() {
@@ -66,6 +67,8 @@ function Route() {
       <NavigationContainer theme={navTheme}>
         <NotificationListnerContainer>
           <MainStack />
+
+          <SnackbarComponent />
         </NotificationListnerContainer>
       </NavigationContainer>
     </SafeAreaProvider>

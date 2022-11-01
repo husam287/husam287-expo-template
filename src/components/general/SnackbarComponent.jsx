@@ -45,8 +45,8 @@ function SnackbarComponent() {
 
   const backgroundStyle = {
     backgroundColor: toast?.type === 'success'
-      ? COLORS.successBgColor
-      : COLORS.dangerBgColor,
+      ? COLORS.success
+      : COLORS.danger,
   };
 
   return (

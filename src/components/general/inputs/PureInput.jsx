@@ -16,12 +16,12 @@ import CustomText from '../CustomText';
 
 const styles = StyleSheet.create({
   errorBorder: {
-    borderColor: COLORS.errorRedColor,
+    borderColor: COLORS.danger,
     borderWidth: 1,
   },
   errorText: {
     ...GLOBAL_STYLES.font400,
-    color: COLORS.errorRedColor,
+    color: COLORS.danger,
     fontSize: 12,
   },
   hintText: {
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   },
   input: {
     color: COLORS.primary,
+    flex: 1,
     fontSize: 14,
     textAlign: I18nManager.isRTL ? 'right' : 'left',
     textAlignVertical: 'center',

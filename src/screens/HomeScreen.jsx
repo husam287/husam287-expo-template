@@ -9,6 +9,7 @@ import ScreenWrapper from 'components/general/ScreenWrapper';
 import ButtonComponent from 'components/general/ButtonComponent';
 import ControllableInput from 'components/general/inputs/ControllableInput';
 import ColoredText from 'components/home-components/ColoredText';
+import showSuccessMsg from 'hooks/showSuccessMsg';
 // import { useFetch } from 'hooks/useFetch'
 // import { ProductEndpoints } from 'apis/endpoints/ProductEndpoints'
 
@@ -31,6 +32,7 @@ export default function HomeScreen() {
 
   const onSubmit = (value) => {
     console.log(value);
+    showSuccessMsg('Done!');
     navigation.navigate('testScreen');
   };
 
