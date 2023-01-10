@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
-    textTransform: 'uppercase',
     ...GLOBAL_STYLES.font500,
   },
 });
@@ -33,9 +32,10 @@ export default function ButtonComponent({
   backgroundColor = COLORS.primary,
   borderColor,
   disabled = false,
-  fontSize = 14,
+  btnHeight = 48,
   buttonCustomStyle,
-  IconCompoent,
+  textCustomStyle,
+  IconComponent,
   isLoading,
 }) {
   const customStyle = {
@@ -43,6 +43,7 @@ export default function ButtonComponent({
     color,
     borderColor,
     borderWidth: borderColor && 1,
+    height: btnHeight,
     ...buttonCustomStyle,
   };
 
@@ -55,11 +56,11 @@ export default function ButtonComponent({
         style={[styles.button, customStyle]}
       >
         {!isLoading ? (
-          <View>
-            {IconCompoent || null}
+          <View style={GLOBAL_STYLES.row}>
+            {IconComponent || null}
             {title
               ? (
-                <CustomText style={[styles.text, { color, fontSize }]}>
+                <CustomText style={[styles.text, textCustomStyle]}>
                   {title}
                 </CustomText>
               )

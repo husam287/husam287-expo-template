@@ -17,6 +17,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "scheme": "fb581500183717057",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.bit68.hossam",

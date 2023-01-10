@@ -14,4 +14,12 @@ export default class AuthEndpoint {
       data,
     };
   }
+
+  static facebookLogin() {
+    return { url: '/users/facebook/', method: 'post' };
+  }
+
+  static appleLogin() {
+    return { url: '/users/apple', method: 'post' };
+  }
 }

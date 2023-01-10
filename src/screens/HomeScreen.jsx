@@ -10,6 +10,8 @@ import ButtonComponent from 'components/general/ButtonComponent';
 import ControllableInput from 'components/general/inputs/ControllableInput';
 import ColoredText from 'components/home-components/ColoredText';
 import showSuccessMsg from 'hooks/showSuccessMsg';
+import FacebookRegisterationButton from 'components/auth-components/FacebookRegisterationButton';
+import AppleRegisterationButton from 'components/auth-components/AppleRegisterationButton';
 // import { useFetch } from 'hooks/useFetch'
 // import { ProductEndpoints } from 'apis/endpoints/ProductEndpoints'
 
@@ -51,6 +53,9 @@ export default function HomeScreen() {
         title="Submit"
         onPress={handleSubmit(onSubmit)}
       />
+
+      <FacebookRegisterationButton />
+      <AppleRegisterationButton />
     </ScreenWrapper>
   );
 }
