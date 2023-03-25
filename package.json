@@ -1,5 +1,13 @@
 {
   "name": "@husam287/expo-template",
+  "homepage": "https://github.com/husam287/husam287-expo-template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/husam287/husam287-expo-template.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": {
     "name": "Hossam Sherif",
     "email": "hossam.sherif.hassan@gmail.com",
