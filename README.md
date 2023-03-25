@@ -5,7 +5,7 @@ EXPO SDK 48 Template
 > To use this template, make sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) latest version installed and run:
 
 ```bash
-npx create-expo-app [name] --npm --template @husam287/expo-template
+expo init [name] --template @husam287/expo-template
 ```
 
 ## ⚡ Stack and Dependencies
