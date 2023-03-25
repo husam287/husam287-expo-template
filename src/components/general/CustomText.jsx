@@ -18,12 +18,11 @@ export default function CustomText({
   numberOfLines,
   ...otherProps
 }) {
-  const customStyles = style?.lenght ? [...style] : style;
   return (
     <Text
       {...otherProps}
       numberOfLines={numberOfLines}
-      style={[styles.textStyle, customStyles]}
+      style={[styles.textStyle, style]}
     >
       {children}
     </Text>
