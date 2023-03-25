@@ -1,31 +1,34 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
+import RouterOption from 'routes/header-options/RouterOption';
 import BottomNavigator from 'routes/tab-navigator/BottomTabNavigator';
-import TestScreen from 'screens/TestScreen';
-import RouterOption from '../header-options/RouterOption';
+import NotificationScreen from 'screens/main/Notification';
 
 const Stack = createNativeStackNavigator();
 
 export default function MainStack() {
   return (
     <Stack.Navigator>
-      {/* MAIN SCREENS */}
       <Stack.Group>
         <Stack.Screen
-          name="HomeStack"
+          name="Root"
           component={BottomNavigator}
-          options={({ navigation }) => RouterOption({ navigation })}
+          options={({ navigation }) => RouterOption({
+            navigation,
+            isRightComponentHidden: true,
+          })}
         />
 
         <Stack.Screen
-          name="testScreen"
-          component={TestScreen}
-          options={({ navigation }) => RouterOption({ navigation, title: 'Test screen' })}
+          name="NotificationScreen"
+          component={NotificationScreen}
+          options={({ navigation }) => RouterOption({
+            navigation,
+            title: 'Notification',
+            isRightComponentHidden: true,
+          })}
         />
       </Stack.Group>
-
-      {/* AUTH SCREENS */}
-      <Stack.Group />
     </Stack.Navigator>
   );
 }

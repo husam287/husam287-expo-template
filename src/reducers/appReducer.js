@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   isLoading: false,
   toast: null,
+  deviceId: null,
 };
 
 export const appSlice = createSlice({
@@ -30,6 +31,10 @@ export const appSlice = createSlice({
       toast: null,
 
     }),
+    setDeviceId: (state, action) => ({
+      ...state,
+      deviceId: action.payload,
+    }),
   },
 });
 
@@ -40,6 +45,7 @@ export const {
   setSuccessToast,
   setDangerToast,
   hideToast,
+  setDeviceId,
 } = appSlice.actions;
 
 export default appSlice.reducer;

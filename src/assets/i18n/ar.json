@@ -1,5 +1,10 @@
 {
-  "CFBundleDisplayName":"تيست ابلكيشن",
+  "CFBundleDisplayName": "خزين",
+  "app_name": "خزين",
   "lang": "ar",
-  "dir": "rtl"
+  "HOME": "الرئيسية",
+  "CATEGORIES": "الاقسام",
+  "OFFERS": "العروض",
+  "CART": "سلة الشراء",
+  "PROFILE": "القائمة"
 }

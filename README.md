@@ -1,18 +1,18 @@
 # husam287-expo-template
 
-EXPO SDK 46 Template
+EXPO SDK 48 Template
 
-> To use this template, make sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) installed and run:
+> To use this template, make sure to have the [Expo CLI](https://docs.expo.io/workflow/expo-cli/) latest version installed and run:
 
 ```bash
-expo init [name] --template @husam287/expo-template
+npx create-expo-app [name] --npm --template @husam287/expo-template
 ```
 
 ## ⚡ Stack and Dependencies
 
 - [**React Navigation**](https://reactnavigation.org/docs/getting-started/): For navigating through screens, we are using react navigation's tab and stack navigators with custom header created
 - [**Redux Toolkit**](https://redux-toolkit.js.org/): We use redux toolkit to manage universal state. An introduction into redux toolkit can be found [here](https://www.youtube.com/watch?v=9zySeP5vH9c).
-- [**Axios hooks**](https://www.npmjs.com/package/axios-hooks): To use axios as react hook with the aim of [axios hook package](https://www.npmjs.com/package/axios-hooks)
+- [**RTK Query**](https://redux-toolkit.js.org/rtk-query/overview): a high performance lib for fetching data
 - [**Icomoon**](https://icomoon.io/): To use custom icons using icon component and files generated from [Icomoon website](https://icomoon.io/)
 - [**Form Validation:**](https://react-hook-form.com/) We are using [react-hook-form](https://react-hook-form.com/) and [yup](https://www.npmjs.com/package/yup) to validate our user inputs, checking them in our form-input component while passing the yup schema in the screens
 - [**Translations:**](https://www.npmjs.com/package/i18n-js) We are using [i18n-js](https://www.npmjs.com/package/i18n-js) and [expo-localization](https://docs.expo.dev/versions/latest/sdk/localization/) to translate the app (en - ar).
@@ -21,6 +21,8 @@ expo init [name] --template @husam287/expo-template
 - [**Husky:**](https://github.com/typicode/husky) To make pre-commit hooks
 - [**Lint-staging:**](https://github.com/okonet/lint-staged#Configuration) Work with husky to prevent commit code without making linting
 - **Absolute Imports:** To avoid annoying relative.
+- **App Name Localization:** Now you can localize the app name with the key of "CFBundleDisplayName" for ios and "app_name" for android in i18n files
+
 
 ## 🔧 Usage
 

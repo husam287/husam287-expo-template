@@ -12,7 +12,9 @@ import {
 import GLOBAL_STYLES from 'constants/GlobalStyles';
 import useShadow from 'hooks/useShadow';
 import COLORS from 'constants/Colors';
+import i18n from 'assets/i18n';
 import CustomText from '../CustomText';
+import Icon from '../Icon';
 
 const styles = StyleSheet.create({
   errorBorder: {
@@ -30,22 +32,28 @@ const styles = StyleSheet.create({
     ...GLOBAL_STYLES.font400,
   },
   input: {
-    color: COLORS.primary,
+    color: COLORS.dark,
     flex: 1,
     fontSize: 14,
     textAlign: I18nManager.isRTL ? 'right' : 'left',
     textAlignVertical: 'center',
     width: '100%',
-    ...GLOBAL_STYLES.font400,
+    ...GLOBAL_STYLES.font500,
   },
   inputContainer: {
     alignItems: 'center',
     backgroundColor: COLORS.light,
-    borderRadius: 10,
+    borderRadius: 16,
     flexDirection: 'row',
-    height: 50,
-    marginTop: 23,
+    height: 56,
+    marginTop: 5,
     paddingHorizontal: 15,
+  },
+  labelText: {
+    color: COLORS.dark,
+    fontSize: 14,
+    marginStart: 5,
+    ...GLOBAL_STYLES.font500,
   },
   showPasswordIcon: {
     elevation: 20,
@@ -55,6 +63,8 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   spaceAround: { marginHorizontal: 5 },
+  spaceBottom: { marginBottom: 16 },
+  spaceEnd10: { marginEnd: 10 },
 });
 
 export default function PureInput({
@@ -62,19 +72,23 @@ export default function PureInput({
   editable = true,
   customContainerStyle,
   prefix,
-  suffix,
+  suffix = <Icon name="edit" color={COLORS.darkGrey} size={14} />,
   value,
   onChange,
+  onSubmit = () => {},
   onBlur = () => {},
-  placeholderText,
+  placeholderText = i18n.t('DEFAULT_PLACEHOLDER'),
   inputType,
-  placeholderTextColor = COLORS.grey,
+  placeholderTextColor = `${COLORS.headlineDark}8A`,
   keyboard = 'default',
   autoCompleteType,
   maxLength,
+  customInputColorWhenDisabled = COLORS.darkGrey,
   textArea,
   customInputStyle,
   hintText,
+  labelText,
+  isPlaceholderDotsHidden = false,
 }) {
   const [showPassword, setShowPassword] = useState(false);
   const hasErrors = Boolean(error);
@@ -129,27 +143,49 @@ export default function PureInput({
   const inputContainerStyles = [
     styles.inputContainer,
     { ...customContainerStyle },
-    shadowStyle(40, 0.25),
+    shadowStyle(),
     hasErrors && styles.errorBorder,
   ];
 
   const inputStyles = [
     styles.input,
     customInputStyle && { ...customInputStyle },
-    !editable && { color: COLORS.darkGrey }, // override color when disabled
+    !editable && { color: customInputColorWhenDisabled }, // override color when disabled
   ];
 
   const placeholderTextColorValue = placeholderTextColor || COLORS.grey;
 
+  const LabelMarkup = (!!labelText
+    && (
+    <View style={GLOBAL_STYLES.row}>
+      <Icon
+        name="next"
+        size={14}
+        color={COLORS.darkGrey}
+      />
+      <CustomText style={styles.labelText}>
+        {labelText}
+      </CustomText>
+    </View>
+    )
+  );
+
   return (
-    <>
+    <View style={styles.spaceBottom}>
+      {LabelMarkup}
+
       <View pointerEvents={pointerEventValue} style={inputContainerStyles}>
-        {prefix || null}
+        {!!prefix && (
+          <View style={styles.spaceEnd10}>
+            {prefix}
+          </View>
+        )}
 
         <TextInput
           onChangeText={onChange}
           onBlur={onBlur}
-          placeholder={placeholderText}
+          onSubmitEditing={onSubmit}
+          placeholder={`${placeholderText}${isPlaceholderDotsHidden ? '' : '...'}`}
           value={value}
           textContentType={inputType}
           secureTextEntry={inputType === 'password' && !showPassword}
@@ -173,6 +209,6 @@ export default function PureInput({
       </View>
 
       {ErrorSectionMarkup}
-    </>
+    </View>
   );
 }

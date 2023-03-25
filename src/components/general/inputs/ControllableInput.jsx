@@ -1,5 +1,4 @@
 import React from 'react';
-import COLORS from 'constants/Colors';
 import { Controller } from 'react-hook-form';
 import PureInput from './PureInput';
 
@@ -12,13 +11,14 @@ export default function ControllableInput({
   suffix,
   placeholderText,
   inputType,
-  placeholderTextColor = COLORS.grey,
+  placeholderTextColor,
   keyboard = 'default',
   autoCompleteType,
   maxLength,
   textArea,
   customInputStyle,
   hintText,
+  labelText,
 }) {
   return (
     <Controller
@@ -26,6 +26,7 @@ export default function ControllableInput({
       name={name}
       render={({ field: { onChange, onBlur, value }, fieldState }) => (
         <PureInput
+          labelText={labelText}
           onChange={onChange}
           onBlur={onBlur}
           value={value}

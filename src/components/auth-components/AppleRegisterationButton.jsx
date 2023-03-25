@@ -1,12 +1,8 @@
 import React from 'react';
 import * as AppleAuthentication from 'expo-apple-authentication';
-import HandleErrors from 'hooks/handleErrors';
-import ButtonComponent from 'components/general/ButtonComponent';
+import ButtonComponent from 'components/general/Button';
 import { StyleSheet } from 'react-native';
 import COLORS from 'constants/Colors';
-import loginHandler from 'hooks/loginHandler';
-import AuthEndpoint from 'apis/endpoints/AuthEndpoints';
-import useFetch from 'hooks/useFetch';
 
 const styles = StyleSheet.create({
   appleRealButton: {
@@ -23,8 +19,7 @@ const styles = StyleSheet.create({
 });
 
 function AppleRegisterationButton() {
-  const [{ loading }, appleLogin] = useFetch(AuthEndpoint.appleLogin(), { manual: true });
-
+  const loading = false;
   return (!loading
     ? (
       <AppleAuthentication.AppleAuthenticationButton
@@ -34,22 +29,22 @@ function AppleRegisterationButton() {
         style={styles.appleRealButton}
         onPress={async () => {
           try {
-            const credential = await AppleAuthentication.signInAsync({
-              requestedScopes: [
-                AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
-                AppleAuthentication.AppleAuthenticationScope.EMAIL,
-              ],
-            });
-            appleLogin({
-              data: {
-                access_token: credential?.authorizationCode,
-                id_token: credential?.identityToken,
-              },
-            })
-              .then((res) => {
-                loginHandler(res?.access_token);
-              })
-              .catch((err) => HandleErrors(err));
+            // const credential = await AppleAuthentication.signInAsync({
+            //   requestedScopes: [
+            //     AppleAuthentication.AppleAuthenticationScope.FULL_NAME,
+            //     AppleAuthentication.AppleAuthenticationScope.EMAIL,
+            //   ],
+            // });
+            // appleLogin({
+            //   data: {
+            //     access_token: credential?.authorizationCode,
+            //     id_token: credential?.identityToken,
+            //   },
+            // })
+            //   .then((res) => {
+            //     loginHandler(res?.access_token);
+            //   })
+            //   .catch((err) => HandleErrors(err));
           } catch (e) {
             console.log(e);
           }

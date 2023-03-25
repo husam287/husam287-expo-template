@@ -1,5 +1,10 @@
 {
-  "CFBundleDisplayName":"Test App",
+  "CFBundleDisplayName": "KHAZYN",
+  "app_name": "KHAZYN",
   "lang": "en",
-  "dir": "ltr"
+  "HOME": "Home",
+  "CATEGORIES": "Category",
+  "OFFERS": "Offers",
+  "CART": "Cart",
+  "PROFILE": "Profile"
 }

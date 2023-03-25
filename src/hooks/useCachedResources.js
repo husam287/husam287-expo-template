@@ -2,10 +2,10 @@ import * as Font from 'expo-font';
 import { useEffect, useState } from 'react';
 
 import IcoMoon from 'assets/icomoon/icomoon.ttf';
-import font400 from 'assets/fonts/Changa-Regular.ttf';
-import font500 from 'assets/fonts/Changa-Medium.ttf';
-import font600 from 'assets/fonts/Changa-SemiBold.ttf';
-import font700 from 'assets/fonts/Changa-Bold.ttf';
+import font300 from 'assets/fonts/Cairo-Light.ttf';
+import font400 from 'assets/fonts/Cairo-Regular.ttf';
+import font500 from 'assets/fonts/Cairo-Medium.ttf';
+import font700 from 'assets/fonts/Cairo-Bold.ttf';
 import * as SplashScreen from 'expo-splash-screen';
 
 export default function useCachedResources() {
@@ -20,9 +20,9 @@ export default function useCachedResources() {
         // Load fonts
         await Font.loadAsync({
           IcoMoon,
+          font300,
           font400,
           font500,
-          font600,
           font700,
         });
       } catch (e) {

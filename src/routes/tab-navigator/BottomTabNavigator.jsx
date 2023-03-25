@@ -1,20 +1,61 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { AntDesign } from '@expo/vector-icons';
+import i18n from 'assets/i18n';
 import Metrics from 'constants/Metrics';
-import HomeScreen from 'screens/HomeScreen';
-import CoursesScreen from 'screens/CoursesScreen';
-import ProfileScreen from 'screens/ProfileScreen';
-import RouterOption from '../header-options/RouterOption';
+import HomeScreen from 'screens/main/Home';
+import COLORS from 'constants/Colors';
 import TapbarComponent from '../header-options/TapbarComponent';
+import RouterOption from '../header-options/RouterOption';
 
-const TABWIDTH = Metrics.screenWidth / 3;
+const TABWIDTH = Metrics.screenWidth / 5;
 
 function HomeTabBarElement({ focused }) {
   return (
     <TapbarComponent
-      title="Home"
-      iconName="home"
+      title={i18n.t('HOME')}
+      iconComponent={
+        <AntDesign name="home" size={24} color={COLORS.primary} />
+      }
+      isFocused={focused}
+      tabWidth={TABWIDTH}
+    />
+  );
+}
+
+function CategoryTabBarElement({ focused }) {
+  return (
+    <TapbarComponent
+      title={i18n.t('CATEGORIES')}
+      iconComponent={
+        <AntDesign name="home" size={24} color={COLORS.primary} />
+      }
+      isFocused={focused}
+      tabWidth={TABWIDTH}
+    />
+  );
+}
+
+function OfferTabBarElement({ focused }) {
+  return (
+    <TapbarComponent
+      title={i18n.t('OFFERS')}
+      iconComponent={
+        <AntDesign name="home" size={24} color={COLORS.primary} />
+      }
+      isFocused={focused}
+      tabWidth={TABWIDTH}
+    />
+  );
+}
+
+function CartTabBarElement({ focused }) {
+  return (
+    <TapbarComponent
+      title={i18n.t('CART')}
+      iconComponent={
+        <AntDesign name="home" size={24} color={COLORS.primary} />
+      }
       isFocused={focused}
       tabWidth={TABWIDTH}
     />
@@ -24,19 +65,10 @@ function HomeTabBarElement({ focused }) {
 function ProfileTabBarElement({ focused }) {
   return (
     <TapbarComponent
-      title="Profile"
-      iconName="user"
-      isFocused={focused}
-      tabWidth={TABWIDTH}
-    />
-  );
-}
-
-function CoursesTabBarElement({ focused }) {
-  return (
-    <TapbarComponent
-      title="Courses"
-      iconName="heart_outline"
+      title={i18n.t('PROFILE')}
+      iconComponent={
+        <AntDesign name="home" size={24} color={COLORS.primary} />
+      }
       isFocused={focused}
       tabWidth={TABWIDTH}
     />
@@ -58,35 +90,52 @@ export default function BottomNavigator() {
     >
       {/* Home  */}
       <BottomTab.Screen
-        name="Home"
+        name="HomeScreen"
         options={({ navigation }) => RouterOption({
           navigation,
-          title: 'Home',
           tabBarIcon: HomeTabBarElement,
+        })}
+        component={HomeScreen}
+      />
+
+      {/* Categories */}
+      <BottomTab.Screen
+        name="CategoryScreen"
+        options={({ navigation }) => RouterOption({
+          navigation,
+          tabBarIcon: CategoryTabBarElement,
+        })}
+        component={HomeScreen}
+      />
+
+      {/* Offers */}
+      <BottomTab.Screen
+        name="MainOffersScreen"
+        options={({ navigation }) => RouterOption({
+          navigation,
+          tabBarIcon: OfferTabBarElement,
+        })}
+        component={HomeScreen}
+      />
+
+      {/* Cart */}
+      <BottomTab.Screen
+        name="CartScreen"
+        options={({ navigation }) => RouterOption({
+          navigation,
+          tabBarIcon: CartTabBarElement,
         })}
         component={HomeScreen}
       />
 
       {/* Profile  */}
       <BottomTab.Screen
-        name="Profile"
+        name="ProfileScreen"
         options={({ navigation }) => RouterOption({
           navigation,
-          title: 'Profile',
           tabBarIcon: ProfileTabBarElement,
         })}
-        component={ProfileScreen}
-      />
-
-      {/* Courses */}
-      <BottomTab.Screen
-        name="Courses"
-        options={({ navigation }) => RouterOption({
-          navigation,
-          title: 'Courses',
-          tabBarIcon: CoursesTabBarElement,
-        })}
-        component={CoursesScreen}
+        component={HomeScreen}
       />
     </BottomTab.Navigator>
   );

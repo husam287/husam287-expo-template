@@ -6,12 +6,9 @@ import { ResponseType } from 'expo-auth-session';
 import { FontAwesome } from '@expo/vector-icons';
 
 import Constants from 'expo-constants';
-import ButtonComponent from 'components/general/ButtonComponent';
+import ButtonComponent from 'components/general/Button';
 import GLOBAL_STYLES from 'constants/GlobalStyles';
 import COLORS from 'constants/Colors';
-import loginHandler from 'hooks/loginHandler';
-import useFetch from 'hooks/useFetch';
-import AuthEndpoint from 'apis/endpoints/AuthEndpoints';
 
 const FACEBOOK_BTN_COLOR = '#3B5998';
 const FACEBOOK_CLENT_ID = '581500183717057';
@@ -48,16 +45,17 @@ function FacebookRegisterationButton({ text = 'Continue with Facebook' }) {
     }),
   });
 
-  const [{ loading }, facebookLogin] = useFetch(AuthEndpoint.facebookLogin(), { manual: true });
+  const loading = false;
   const facebookRegister = async () => {
     const promptAsync = facebookService[2];
     const result = await promptAsync();
-    facebookLogin({
-      data: { access_token: result?.authentication?.accessToken },
-    })
-      .then((res) => {
-        loginHandler(res?.access_token);
-      });
+    console.log(result);
+    // facebookLogin({
+    //   data: { access_token: result?.authentication?.accessToken },
+    // })
+    //   .then((res) => {
+    //     loginHandler(res?.access_token);
+    //   });
   };
 
   return (

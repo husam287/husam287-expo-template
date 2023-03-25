@@ -5,16 +5,26 @@ import { I18nManager, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   textStyle: {
-    color: COLORS.light,
+    color: COLORS.dark,
+    fontSize: 14,
     writingDirection: I18nManager.isRTL ? 'rtl' : 'ltr',
-    ...GLOBAL_STYLES.font400,
+    ...GLOBAL_STYLES.font500,
   },
 });
 
-export default function CustomText({ style, children, ...otherProps }) {
+export default function CustomText({
+  style,
+  children,
+  numberOfLines,
+  ...otherProps
+}) {
   const customStyles = style?.lenght ? [...style] : style;
   return (
-    <Text {...otherProps} style={[styles.textStyle, customStyles]}>
+    <Text
+      {...otherProps}
+      numberOfLines={numberOfLines}
+      style={[styles.textStyle, customStyles]}
+    >
       {children}
     </Text>
   );

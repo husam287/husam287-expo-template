@@ -17,7 +17,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "scheme": "fb581500183717057",
+    "scheme": "com.bit68.hossam",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.bit68.hossam",
@@ -38,6 +38,17 @@
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-localization",
+      [
+        "expo-notifications",
+        {
+          "icon": "./src/assets/notification-icon.png",
+          "color": "#ffffff"
+        }
+      ],
+      "@mmomtchev/expo-android-localized-app-name"
+    ]
   }
 }
